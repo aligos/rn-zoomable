@@ -1,0 +1,30 @@
+{
+  "name": "rn-zoomable",
+  "version": "1.0.0",
+  "description": "A zoomable image component like Instagram",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aligos/rn-zoomable.git"
+  },
+  "keywords": [
+    "Image",
+    "Zoomable",
+    "Draggable"
+  ],
+  "author": "Rahmat Aligos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aligos/rn-zoomable/issues"
+  },
+  "homepage": "https://github.com/aligos/rn-zoomable#readme",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "prop-types": "*",
+    "class-autobind": "*"
+  }
+}
