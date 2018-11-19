@@ -1,6 +1,6 @@
 {
   "name": "rn-zoomable",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A zoomable image component like Instagram",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,9 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "prop-types": "*",
+    "prop-types": "*"
+  },
+  "dependencies": {
     "class-autobind": "*"
   }
 }

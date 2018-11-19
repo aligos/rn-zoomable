@@ -6,7 +6,7 @@ import { View, Animated, StyleSheet } from "react-native";
 import type { Measurement } from "./types/Measurement";
 
 type Props = {
-  selectedPhoto: { photoURI: string, measurement: Measurement }
+  selectedImage: { photoURI: string, measurement: Measurement }
 };
 
 type State = {
@@ -18,7 +18,7 @@ type Context = {
   scaleValue: Animated.Value
 };
 
-export default class SelectedPhoto extends Component {
+export default class SelectedImage extends Component {
   props: Props;
   state: State = { isLoaded: false };
   context: Context;
@@ -30,7 +30,7 @@ export default class SelectedPhoto extends Component {
   };
 
   render() {
-    let { selectedPhoto } = this.props;
+    let { selectedImage } = this.props;
     let { isLoaded } = this.state;
 
     let { gesturePosition, scaleValue } = this.context;
@@ -46,8 +46,8 @@ export default class SelectedPhoto extends Component {
       {
         position: "absolute",
         zIndex: 10,
-        width: selectedPhoto.measurement.w,
-        height: selectedPhoto.measurement.h,
+        width: selectedImage.measurement.w,
+        height: selectedImage.measurement.h,
         opacity: isLoaded ? 1 : 0
       },
       animatedStyle
@@ -72,7 +72,7 @@ export default class SelectedPhoto extends Component {
           style={imageStyle}
           onLoad={() => this.setState({ isLoaded: true })}
           source={{
-            uri: selectedPhoto.photoURI
+            uri: selectedImage.photoURI
           }}
         />
       </View>

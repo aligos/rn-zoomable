@@ -45,11 +45,11 @@ type Context = {
   getScrollPosition: () => number
 };
 
-export default class PhotoComponent extends Component {
+export default class ZoomableImage extends Component {
   props: Props;
   context: Context;
   _parent: ?Object;
-  _photoComponent: ?Object;
+  _zoomableImage: ?Object;
   _gestureHandler: Object;
   _initialTouches: Array<Object>;
   _selectedPhotoMeasurement: Measurement;
@@ -86,7 +86,7 @@ export default class PhotoComponent extends Component {
       <View ref={parentNode => (this._parent = parentNode)}>
         {renderCaption && renderCaption()}
         <Animated.View
-          ref={node => (this._photoComponent = node)}
+          ref={node => (this._zoomableImage = node)}
           {...this._gestureHandler.panHandlers}
           style={{ opacity: this._opacity }}
         >
@@ -227,11 +227,11 @@ export default class PhotoComponent extends Component {
 
   async _measureSelectedPhoto() {
     let parent = ReactNative.findNodeHandle(this._parent);
-    let photoComponent = ReactNative.findNodeHandle(this._photoComponent);
+    let zoomableImage = ReactNative.findNodeHandle(this._zoomableImage);
 
     let [parentMeasurement, photoMeasurement] = await Promise.all([
       measureNode(parent),
-      measureNode(photoComponent)
+      measureNode(zoomableImage)
     ]);
 
     return {

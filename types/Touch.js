@@ -1,5 +1,5 @@
 // @flow
-export type Touch = {
+declare export type Touch = {
   pageX: number,
   pageY: number,
 };

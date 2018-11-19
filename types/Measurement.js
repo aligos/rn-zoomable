@@ -1,5 +1,5 @@
 // @flow
-export type Measurement = {
+declare export type Measurement = {
   x: number,
   y: number,
   w: number,
