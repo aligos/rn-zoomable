@@ -1,7 +1,7 @@
 import SelectedImage from "./SelectedImage";
 import ZoomableImage from "./ZoomableImage";
 
-export default {
+module.exports = {
   SelectedImage,
   ZoomableImage
 };
