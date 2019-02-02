@@ -1,6 +1,6 @@
 {
   "name": "rn-zoomable",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A zoomable image component like Instagram",
   "main": "index.js",
   "scripts": {

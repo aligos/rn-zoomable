@@ -7,7 +7,8 @@ import ReactNative, {
   View,
   Animated,
   PanResponder,
-  Easing
+  Easing,
+  StyleSheet
 } from "react-native";
 import FlexImage from "./FlexImage";
 
@@ -31,6 +32,7 @@ type GestureState = {
 };
 
 type Props = {
+  style?: StyleSheet.Styles,
   source: { uri: string },
   isDragging: boolean,
   onGestureStart: ({ photoURI: string, measurement: Measurement }) => void,
@@ -80,7 +82,7 @@ export default class ZoomableImage extends Component {
   }
 
   render() {
-    let { source, renderCaption } = this.props;
+    let { style, source, renderCaption } = this.props;
 
     return (
       <View ref={parentNode => (this._parent = parentNode)}>
@@ -90,7 +92,7 @@ export default class ZoomableImage extends Component {
           {...this._gestureHandler.panHandlers}
           style={{ opacity: this._opacity }}
         >
-          <FlexImage source={source} />
+          <FlexImage style={style} source={source} />
         </Animated.View>
       </View>
     );
